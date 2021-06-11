@@ -1,0 +1,80 @@
+/* 
+Theme Name:		 OIVAN Kaan-Koh Gym
+Theme URI:		 https://github.com/lightcompass/theme
+Description:	 Twenty Twenty-One Child theme
+Author:			 Part
+Author URI:		 https://github.com/lightcompass
+Template:		 twentytwenty
+Version:		 1.0.0
+Text Domain:	 oivan-kkg
+-------------------------------------------------------------- */
+
+/* =Theme customization starts here
+------------------------------------------------------- */
+.post-inner {
+    padding-top: 1rem;
+}
+.flex-container-horizontal {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+}
+
+.flex-horizontal-item {
+    padding: 5px;
+    /*flex: 0 0 33.333333%;*/
+    margin-top: 10px;
+    font-weight: bold;
+    text-align: center;
+}
+h1, .heading-size-1 {
+    font-size: 4rem;
+}
+.singular .entry-header {
+    padding: 4rem 0;
+    display: none;
+}
+.trainer-list-bio {
+    text-align: center;
+}
+.trainer-list-bio img {
+    padding: 0 0 10px 0;
+    margin: 0 auto;
+}
+#user-registration {
+    margin:30px auto 0;
+}
+.box {
+    padding:10px;
+    border: 1px solid gray;
+}
+
+.btn {
+    background-color: red;
+    padding: 10px 15px;
+    color: white;
+    text-decoration: none;
+    display: inline-block;
+}
+.btn:hover {
+    background-color:tomato;
+
+}
+.course-list {
+    width: 80%;
+    margin: 0 auto;
+}
+.course-list img {
+    float: left;
+    margin: 0 20px 50px 0;
+}
+.col {
+    float: left;
+}
+.col-left {
+    width: 65%;
+}
+.col-right {
+    width: 28%;
+    margin: 10% 0 0 4%;
+}
