@@ -235,3 +235,38 @@ function download_trainer_csv()
 
 	array_to_csv_download($DBRecord,"trainers.csv");
 }
+
+// Get course list
+add_shortcode('courselist', 'get_course_list');
+
+function get_course_list()
+{
+	$args2 = array(
+		'paged' => 1,
+		'posts_per_page' => '-1',
+		'offset' => 0,
+		'post_status' => 'publish',
+		'ignore_sticky_posts' => 0,
+		'orderby' => 'date',
+		'order' => 'DESC',
+		'post_type' => 'course'
+	);
+	
+	/* The 2nd Query (without global var) */
+	$query2 = new WP_Query( $args2 );
+	$output = '';
+	// The 2nd Loop
+	while ( $query2->have_posts() ) {
+		$query2->the_post();
+		$output .= '<div class="course-list">';
+		$output .= get_the_post_thumbnail( get_the_ID(), 'medium' );
+		$output .= "<h2><a href='".get_the_permalink()."'>" . get_the_title( $query2->post->ID ) . "</a></h2>";
+		$output .= get_the_content();
+		$output .= "<a href='".get_the_permalink()."'>Register to this course</a>";
+		$output .= '</div>';
+	}
+	
+	// Restore original Post Data
+	wp_reset_postdata();
+	return $output;
+}
